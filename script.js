@@ -16,10 +16,34 @@ let getWeather =  () => {
     //if input field is valid
     .then((data) => {
         console.log(data);
+        console.log(data.weather[0].icon);
+        console.log(data.weather[0].main);
+        console.log(data.weather[0].description);
+        console.log(data.name);
+        console.log(data.main);
+        console.log(data.main.temp_min);
+        console.log(data.main.temp_max);
+
+        result.innerHTML =`<h1>${data.name}</h1>
+        <h3 class ="weather">${data.weather[0].main}</h3>
+        
+        <h3 class ="desc">${data.weather[0].description}</h3>
+        <h1>${data.main.temp}&#176</h1>
+        <div class = "temp-container">
+            <div>
+                <h4 class = "title">Min</h4>
+                <h4 class= "temp">${data.main.temp_min}</h4>
+            </div>
+            <div>
+                <h4 class = "title">Max</h4>
+                <h4 class= "temp">${data.main.temp_max}</h4>
+            </div>
+        </div>`;
     })
     .catch(() => {
         result.innerHTML = `<h3>No such City found </h3>`;
     })
     }
 };
+searchBtn.addEventListener('click', getWeather);
 window.addEventListener('load', getWeather);
