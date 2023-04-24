@@ -9,6 +9,7 @@
 :root{
     --primary-color: #FFF3E2;
     --secondary-color: #FA9884;
+    --primary-transparent-color: #fff3e253;
     --secondary-transparent-color: #ffffff46;
     --third-color: #FFE5CA;
 }
@@ -38,10 +39,6 @@ html{
     justify-content: center;
     align-items: center;
 }
-.result{
-    text-align: center;
-    margin-top: 3rem;
-}
 .search{
     padding: 1rem 1.8rem;
     margin-right: 0.7rem;
@@ -58,4 +55,46 @@ html{
 }
 .search-btn:hover{
     box-shadow: none;
+}
+.result{
+    text-align: center;
+    margin-top: 3rem;
+    background-color: var(--primary-transparent-color);
+    padding: 2rem 3rem;
+    border-radius: 3rem;
+}
+.result  h1{
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    margin-top: .5rem;
+}
+.weather, .desc{
+    text-transform: capitalize;
+    font-size: 1.5rem;
+}
+.desc {
+    font-size: 1.1rem;
+}
+.temp-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 1.5rem;
+}
+
+@media(max-width:991px){
+    html{
+        font-size: 75%;
+    }
+}
+
+@media(max-width : 661px){
+    html{
+        font-size: 65%;
+    }
+}
+@media(max-width: 349px){
+    html{
+        font-size: 50%;
+    }
 }

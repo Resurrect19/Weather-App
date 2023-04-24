@@ -15,14 +15,14 @@ let getWeather =  () => {
     .then((resp) => resp.json())
     //if input field is valid
     .then((data) => {
-        console.log(data);
-        console.log(data.weather[0].icon);
-        console.log(data.weather[0].main);
-        console.log(data.weather[0].description);
-        console.log(data.name);
-        console.log(data.main);
-        console.log(data.main.temp_min);
-        console.log(data.main.temp_max);
+        // console.log(data);
+        // console.log(data.weather[0].icon);
+        // console.log(data.weather[0].main);
+        // console.log(data.weather[0].description);
+        // console.log(data.name);
+        // console.log(data.main);
+        // console.log(data.main.temp_min);
+        // console.log(data.main.temp_max);
 
         result.innerHTML =`<h1>${data.name}</h1>
         <h3 class ="weather">${data.weather[0].main}</h3>
@@ -30,13 +30,13 @@ let getWeather =  () => {
         <h3 class ="desc">${data.weather[0].description}</h3>
         <h1>${data.main.temp}&#176</h1>
         <div class = "temp-container">
-            <div>
+            <div class= "temp-box">
                 <h4 class = "title">Min</h4>
-                <h4 class= "temp">${data.main.temp_min}</h4>
+                <h4 class= "temp">${data.main.temp_min}&#176</h4>
             </div>
-            <div>
+            <div class= "temp-box">
                 <h4 class = "title">Max</h4>
-                <h4 class= "temp">${data.main.temp_max}</h4>
+                <h4 class= "temp">${data.main.temp_max}&#176</h4>
             </div>
         </div>`;
     })
